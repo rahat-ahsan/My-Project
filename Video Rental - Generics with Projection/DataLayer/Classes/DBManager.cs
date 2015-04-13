@@ -20,7 +20,6 @@ namespace DataLayer.Classes
             ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
 
         #region GetConnection and Command 
-
         public SqlConnection GetConnection()
         {
             var conn = new SqlConnection(connectionString);
@@ -160,6 +159,7 @@ namespace DataLayer.Classes
                          param.Add(new SqlParameter(property.Name, property.GetValue(item)));
                     }
                 }
+
             }
             return param;
         }
