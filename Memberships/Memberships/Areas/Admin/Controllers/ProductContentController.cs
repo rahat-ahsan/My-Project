@@ -9,120 +9,116 @@ using System.Web;
 using System.Web.Mvc;
 using Memberships.Entities;
 using Memberships.Models;
+using Memberships.Areas.Admin.Models;
 
 namespace Memberships.Areas.Admin.Controllers
 {
-    public class ContentController : Controller
+    public class ProductContentController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Admin/Content
+        // GET: Admin/ProductContent
         public async Task<ActionResult> Index()
         {
-            return View(await db.Contents.ToListAsync());
+            return View(await db.ProductContents.ToListAsync());
         }
 
-        // GET: Admin/Content/Details/5
+        // GET: Admin/ProductContent/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Content content = await db.Contents.FindAsync(id);
-            if (content == null)
+            ProductContent productContent = await db.ProductContents.FindAsync(id);
+            if (productContent == null)
             {
                 return HttpNotFound();
             }
-            return View(content);
+            return View(productContent);
         }
 
-        // GET: Admin/Content/Create
+        // GET: Admin/ProductContent/Create
         public ActionResult Create()
         {
-            var model = new Content()
+            var model = new ProductContentModel
             {
-                ContentTypes = db.ContentTypes.ToList(),
-                Parts = db.Parts.ToList(),
-                Products = db.Products.ToList(),
-                Chapters = db.Chapters.ToList()
+                Contents = db.Contents.ToList(),
+                Products = db.Products.ToList()
             };
             return View(model);
         }
 
-        // POST: Admin/Content/Create
+        // POST: Admin/ProductContent/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Title,Description,Url,HTML,ContentTypeId,ChapterId,PartId")] Content content)
+        public async Task<ActionResult> Create([Bind(Include = "ProductId,ContentId")] ProductContent productContent)
         {
             if (ModelState.IsValid)
             {
-                db.Contents.Add(content);
+                db.ProductContents.Add(productContent);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(content);
+            return View(productContent);
         }
 
-        // GET: Admin/Content/Edit/5
+        // GET: Admin/ProductContent/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Content content = await db.Contents.FindAsync(id);
-            if (content == null)
+            ProductContent productContent = await db.ProductContents.FindAsync(id);
+            if (productContent == null)
             {
                 return HttpNotFound();
             }
-            content.ContentTypes = await db.ContentTypes.ToListAsync();
-            content.Parts = await db.Parts.ToListAsync();
-            content.Chapters = await db.Chapters.ToListAsync();
-            return View(content);
+            return View(productContent);
         }
 
-        // POST: Admin/Content/Edit/5
+        // POST: Admin/ProductContent/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Title,Description,Url,HTML,ContentTypeId,ChapterId,PartId")] Content content)
+        public async Task<ActionResult> Edit([Bind(Include = "ProductId,ContentId")] ProductContent productContent)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(content).State = EntityState.Modified;
+                db.Entry(productContent).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(content);
+            return View(productContent);
         }
 
-        // GET: Admin/Content/Delete/5
+        // GET: Admin/ProductContent/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Content content = await db.Contents.FindAsync(id);
-            if (content == null)
+            ProductContent productContent = await db.ProductContents.FindAsync(id);
+            if (productContent == null)
             {
                 return HttpNotFound();
             }
-            return View(content);
+            return View(productContent);
         }
 
-        // POST: Admin/Content/Delete/5
+        // POST: Admin/ProductContent/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Content content = await db.Contents.FindAsync(id);
-            db.Contents.Remove(content);
+            ProductContent productContent = await db.ProductContents.FindAsync(id);
+            db.ProductContents.Remove(productContent);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

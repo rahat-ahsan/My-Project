@@ -30,7 +30,9 @@ namespace Memberships.Entities
             public int ContentTypeId { get; set; }
             public int ChapterId { get; set; }
             public int PartId { get; set; }
+            [DisplayName("Chapter")]
             public virtual ICollection<Chapter> Chapters { get; set; }
+            [DisplayName("Part")]
             public virtual ICollection<Part> Parts { get; set; }
             [DisplayName("Content Type")]
             public virtual ICollection<ContentType> ContentTypes { get; set; }

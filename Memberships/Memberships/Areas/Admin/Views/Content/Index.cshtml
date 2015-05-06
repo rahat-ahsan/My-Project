@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<Memberships.Entities.Content>
+@using Memberships.Areas.Admin.Models
+
+
 
 @{
     ViewBag.Title = "Index";
@@ -7,31 +10,21 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.Partial("_CreateNewButtonPartial")
 </p>
-<table class="table">
-    <tr>
+<table class="table table-striped">
+    <tr class="success">
         <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Url)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.HTML)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ContentTypeId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ChapterId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PartId)
-        </th>
+       
         <th></th>
     </tr>
 
@@ -43,26 +36,14 @@
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Url)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.HTML)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContentTypeId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChapterId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PartId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
+       
+        
+            @Html.Partial("_TableButtonPartial", new SmallButtonModel { ItemId = item.Id })
+        
     </tr>
 }
 
