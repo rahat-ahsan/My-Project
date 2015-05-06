@@ -181,7 +181,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AllocateRoom.cs" />
     <Compile Include="Models\Course.cs" />
-    <Compile Include="Models\DatabaseContextOfTeamIRA.cs" />
+    <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\Day.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Designation.cs" />

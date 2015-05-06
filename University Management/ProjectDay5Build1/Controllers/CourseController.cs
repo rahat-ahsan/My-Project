@@ -11,7 +11,7 @@ namespace ProjectDay5Build1.Controllers
 {
     public class CourseController : Controller
     {
-        private DatabaseContextOfTeamIRA db = new DatabaseContextOfTeamIRA();
+        private DatabaseContext db = new DatabaseContext();
 
         //
         // GET: /Course/

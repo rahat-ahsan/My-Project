@@ -13,7 +13,7 @@ namespace ProjectDay5Build1.Controllers
 {
     public class TeacherController : Controller
     {
-        private DatabaseContextOfTeamIRA db = new DatabaseContextOfTeamIRA();
+        private DatabaseContext db = new DatabaseContext();
 
         
         public ActionResult Index()

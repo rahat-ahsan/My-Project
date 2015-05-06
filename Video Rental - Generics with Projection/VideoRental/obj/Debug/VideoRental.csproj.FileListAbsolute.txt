@@ -62,3 +62,6 @@ E:\EC Education\ADO.Net\Video Rental Assignment - Rahat Ferdous Christofer\Video
 E:\EC Education\ADO.Net\Video Rental Assignment - Rahat Ferdous Christofer\VideoRental\obj\Debug\VideoRental.csprojResolveAssemblyReference.cache
 E:\EC Education\ADO.Net\Video Rental Assignment - Rahat Ferdous Christofer\VideoRental\obj\Debug\VideoRental.exe
 E:\EC Education\ADO.Net\Video Rental Assignment - Rahat Ferdous Christofer\VideoRental\obj\Debug\VideoRental.pdb
+D:\GitHub\My-Project\Video Rental - Generics with Projection\VideoRental\bin\Debug\VideoRental.exe.config
+D:\GitHub\My-Project\Video Rental - Generics with Projection\VideoRental\obj\Debug\VideoRental.exe
+D:\GitHub\My-Project\Video Rental - Generics with Projection\VideoRental\obj\Debug\VideoRental.pdb

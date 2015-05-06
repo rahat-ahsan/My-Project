@@ -5,9 +5,9 @@ using System.Data.Entity;
 
 namespace ProjectDay5Build1.Models
 {
-    public class SampleData : DropCreateDatabaseIfModelChanges<DatabaseContextOfTeamIRA>
+    public class SampleData : DropCreateDatabaseIfModelChanges<DatabaseContext>
     {
-        protected override void Seed(DatabaseContextOfTeamIRA context)
+        protected override void Seed(DatabaseContext context)
         {
             new List<Semester>
                 {
@@ -127,7 +127,7 @@ namespace ProjectDay5Build1.Models
                             TeacherCreditToBeTaken = 12,
                             DepartmentId = 1,
                             DesignationId = 3,
-                            TeacherEmail = "syedkabir@seu.ac.bd",
+                            TeacherEmail = "syedkabir@seu.bd",
                             TeacherRemainingCredit =  12
                         },
                     new Teacher

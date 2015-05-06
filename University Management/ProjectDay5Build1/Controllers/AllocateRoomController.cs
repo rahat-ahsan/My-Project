@@ -10,7 +10,7 @@ namespace ProjectDay5Build1.Controllers
 {
     public class AllocateRoomController : Controller
     {
-        private DatabaseContextOfTeamIRA db = new DatabaseContextOfTeamIRA();
+        private DatabaseContext db = new DatabaseContext();
 
         public ActionResult Index()
         {
