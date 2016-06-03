@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectDay5Build1", "ProjectDay5Build1\ProjectDay5Build1.csproj", "{B30F146F-09CA-43E9-A9E9-9DDFEB8BD481}"
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "University-Management", "ProjectDay5Build1\University-Management.csproj", "{B30F146F-09CA-43E9-A9E9-9DDFEB8BD481}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
