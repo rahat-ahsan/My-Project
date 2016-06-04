@@ -7,44 +7,12 @@
 
 <h2>Index</h2>
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>*@
 
 
 @{
     ViewBag.Title = "Welcome";
 }
-@*<div class="slider hidden-xs">
-    <ul class="rslides">
-        <li><img src="~/Content/Images/bakery.png" alt="" /></li>
-        <li><img src="~/Content/Images/dairy.png" alt="" /></li>
-        <li><img src="~/Content/Images/fruitandveg.png" alt="" /></li>
-        <li><img src="~/Content/Images/meat.png" alt="" /></li>
-    </ul>
-</div>*@
+
 <br />
 <h3 class="text-center">Click on a category below to get started</h3><br />
 
@@ -65,27 +33,4 @@
 </div>
 
 
-    @*<div class="col-md-3">
-        <div class="categorywrap">
-            <a href="~/StoreFront/Index/2">
-                <h2>Meats</h2>
-                <img src="~/Content/Images/meaticon.png" alt="" />
-            </a>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="categorywrap">
-            <a href="~/StoreFront/Index/3">
-                <h2>Bakery</h2>
-                <img src="~/Content/Images/bakeryicon.png" alt="" />
-            </a>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="categorywraplast">
-            <a href="~/StoreFront/Index/4">
-                <h2>Fruit &amp; Veg</h2>
-                <img src="~/Content/Images/fruiticon.png" alt="" />
-            </a>
-        </div>
-    </div>*@
+    
